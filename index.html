@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Análise Harry Styles</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <section class='header'>
+        <div class="header-background"></div>
+          <h1>Análise Musical: Harry Styles</h2>
+          <p class="description">
+            Harry Styles é um artista britânico nascido em 1994. Com três álbuns de estúdio, "Harry Styles", "Fine Line"
+            e "Harry's House", lançados em 2017, 2019 e 2022 respectivamente, ele se consolidou como um dos maiores
+            artistas da música pop internacional. Foram coletadas as letras das músicas de Harry Styles, totalizando 35
+            músicas e 3 álbuns oficiais. Com esses textos, foram aplicadas técnicas de processamento de linguagem natural,
+            como tokenização, para encontrar os termos mais recorrentes nas canções. Para isso, utilizamos a biblioteca
+            Natural Language Toolkit (NLTK).
+          </p>
+    </section>
+
+
+    <section class="contagem-de-palavras">
+        <h2>Contagem de Palavras</h2>
+
+        <p class="description">
+            Entre os três álbuns analisados, Harry Styles lançou cerca de 35 músicas no total. Quão longas elas são
+            "matematicamente"? Nesta parte, veremos quantas palavras compõem cada música e quão longas são as letras.
+            Nesta contagem, nem palavras com menos de 3 caracteres nem stopwords são contadas.
+        </p>
+
+        <div class='chart-word-count-container'>
+            <canvas id="chart-word-count"></canvas>
+        </div>
+
+        <p class="explanation">
+            A maioria das músicas de Harry Styles contém entre 100 e 120 palavras, um tamanho relativamente curto que
+            contribui para que elas sejam mais repetitivas. Esse formato, que utiliza refrões e frases de impacto de
+            forma recorrente, é comum em produções voltadas para sucesso viral. A estrutura enxuta e o uso repetido de
+            palavras-chave favorecem a memorização e ajudam a manter o interesse do ouvinte, alinhando-se com estratégias
+            de hits populares e reforçando o apelo imediato nas paradas de sucesso e nas plataformas de streaming.
+        </p>
+
+    </section>
+
+    <section class="palavras-mais-populares">
+            <h2>Palavras mais Populares</h2>
+
+            <p class="description">
+                Agora que entendemos a distribuição dos termos usados, temos outra pergunta: Quais são as palavras mais
+                usadas nas composições do Harry Styles? Para essa pergunta, veremos primeiro um resumo geral dos três
+                álbuns analisados e, posteriormente, veremos como esses termos se comportam entre os três álbuns
+                individualmente.
+            </p>
+
+            <div class='chart-most-popular-words-container'>
+                <canvas id="chart-most-popular-words"></canvas>
+            </div>
+
+            <p class="explanation">
+                O gráfico mostra as 10 palavras mais usadas nas composições do artista em ordem de ocorrências.
+                Logo, podemos concluir que a discografia de Harry Styles tem uma predominância de sentimentos neutros,
+                mas ainda expressa emoções positivas significativas, enquanto os sentimentos negativos são relativamente
+                baixos.
+            </p>
+    </section>
+
+    <section class="palavras-mais-populares-individual">
+            <h2>Palavras mais populares em cada Álbum</h2>
+
+            <p class="description">
+                Quão diferentes são os termos mais usados ​​em cada álbum do Harry Styles?
+            </p>
+
+            <div class="chart-most-popular-words-individual-container">
+                <div class='chart-most-popular-words-melodrama-container'>
+                    <canvas id="chart-most-popular-words-melodrama"></canvas>
+                </div>
+
+                <div class='chart-most-popular-words-pureHeroine-container'>
+                    <canvas id="chart-most-popular-words-pureHeroine"></canvas>
+                </div>
+            </div>
+
+            <p class="explanation">
+                A presença recorrente da palavra "know" sugere que pode haver uma ênfase em temas de conhecimento,
+                compreensão ou relacionamento nas letras. Isso pode indicar que as músicas exploram experiências
+                emocionais e reflexões sobre interações pessoais. No álbum "Harry Styles", as palavras como "angel" e
+                "good" podem sugerir um foco em sentimentos mais positivos ou idealizados, talvez relacionados ao amor
+                ou a relações passadas. Já em "Fine Line", palavras como "golden" e "sugar" podem indicar um tom mais
+                otimista ou lúdico, sugerindo experiências felizes e memórias doces, mas também pode haver uma 
+                contradição, dado o título do álbum, que sugere uma exploração de dualidades e complexidades emocionais.
+            </p>
+    </section>
+
+    <section class="TFIDF">
+            <h2>Importância Lírica com TF-IDF</h2>
+
+            <p class="description">
+                Entendemos quais termos são mais comumente usados ​em cada álbum, mas isso não significa que os termos
+                sejam necessariamente importantes. Em Ciência de Dados, temos uma métrica chamada TF-IDF , que mede o
+                quão importante um termo específico é em relação a todos os termos em um corpo de texto. Basicamente,
+                o TF-IDF é uma pontuação, e quanto maior a pontuação de um termo, mais significativo ele é para todo o
+                trabalho. Quais são os termos mais importantes de acordo com a métrica TF-IDS em cada álbum?
+            </p>
+
+            <div class="chart-TFIDF-container">
+                <div class='chart-TFIDF-melodrama-container'>
+                    <canvas id="chart-TFIDF-melodrama"></canvas>
+                </div>
+
+                <div class='chart-TFIDF-pureHeroine-container'>
+                    <canvas id="chart-TFIDF-pureHeroine"></canvas>
+                </div>
+            </div>
+
+            <p class="explanation">
+                Cada álbum parece ter um estilo lírico distinto, refletido nas palavras que se destacam. Isso pode
+                sugerir uma evolução na temática ou na abordagem lírica de Harry Styles ao longo dos anos. Observando
+                as palavras mais importantes, podemos inferir como a narrativa e os temas abordados nas letras evoluíram
+                ao longo dos anos. Isso pode refletir mudanças na vida pessoal do artista, influências externas ou
+                simplesmente um crescimento artístico.
+            </p>
+    </section>
+
+    <section class="NRC-All">
+            <h2>Análise de Sentimentos com NRC</h2>
+
+            <p class="description">
+                O NRC Emotion Lexicon é um conjunto de termos em inglês que estão ligados a 8 emoções distintas
+                (Alegria, Tristeza, Medo, Raiva, Confiança, Antecipação, Surpresa e Nojo), e também a emoções gerais
+                percebidas como "positivas" ou "negativas". Usando-o como ferramenta, entenderemos melhor os sentimentos
+                intrínsecos do Harry Styles por cada um de seus álbuns de estúdio.
+            </p>
+
+            <div class="chart-NRC-All-container">
+                <div class='chart-NRC-All-melodrama-container'>
+                    <canvas id="chart-NRC-All-melodrama"></canvas>
+                </div>
+
+                <div class='chart-NRC-All-pureHeroine-container'>
+                    <canvas id="chart-NRC-All-pureHeroine"></canvas>
+                </div>
+            </div>
+
+            <p class="explanation">
+                Em geral, o sentimento de alegria tem o maior score nos álbuns, o que pode indicar uma tendência nas
+                letras para explorar temas mais positivos.Essas observações indicam que os álbuns de Harry Styles têm
+                uma forte base de sentimentos positivos, mas há nuances e complexidades emocionais que variam entre os
+                álbuns. Isso pode refletir uma evolução no estilo e nas temáticas das letras ao longo de sua carreira.
+            </p>
+    </section>
+
+    <section class="NRC-PosNeg">
+            <h2>Contribuições dos Sentimentos</h2>
+
+            <p class="description">
+                Conforme explicado anteriormente, o NRC classifica muitas palavras como "positivas" ou "negativas"
+                sentimentalmente. É evidente nos gráficos anteriores que ambos os álbuns têm flutuações emocionais,
+                então quais termos contribuem mais para cada uma das emoções? É isso que analisaremos nesta parte do
+                estudo.
+            </p>
+
+            <h3>Harry Styles</h3>
+
+            <div class="chart-NRC-PosNeg-melodrama-container">
+                <div class='chart-NRC-Pos-melodrama-container'>
+                    <canvas id="chart-NRC-Pos-melodrama"></canvas>
+                </div>
+                <div class='chart-NRC-Neg-melodrama-container'>
+                    <canvas id="chart-NRC-Neg-melodrama"></canvas>
+                </div>
+            </div>
+
+            <h3>Fine Line</h3>
+
+            <div class="chart-NRC-PosNeg-pureHeroine-container">
+                <div class='chart-NRC-Pos-pureHeroine-container'>
+                    <canvas id="chart-NRC-Pos-pureHeroine"></canvas>
+                </div>
+                <div class='chart-NRC-Neg-pureHeroine-container'>
+                    <canvas id="chart-NRC-Neg-pureHeroine"></canvas>
+                </div>
+            </div>
+
+            <p class="explanation">
+                Ao comparar os gráficos entre os álbuns, é possível ver se o artista tem uma abordagem consistente para
+                os temas positivos e negativos ao longo de sua carreira ou se evoluiu para explorar diferentes aspectos
+                emocionais. Cada álbum pode ter um equilíbrio diferente entre palavras positivas e negativas, sugerindo
+                uma mudança de foco. Um álbum com mais palavras positivas pode ser visto como mais otimista, enquanto um
+                com mais palavras negativas pode refletir um tom mais sombrio ou introspectivo. As palavras mais
+                frequentes em cada álbum, tanto positivas quanto negativas, podem destacar temas recorrentes na carreira
+                do artista, como o amor, perda, esperança ou solidão.
+            </p>
+    </section>
+
+    <section class="footer">
+            <hr>
+            <p class="description">
+                Obrigado!!!
+            </p>
+        
+    </section>
+
+  </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
