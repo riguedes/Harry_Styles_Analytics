@@ -1,15 +1,15 @@
 most_popular_words_inView = false;
 word_count_inView = false;
-most_popular_words_melodrama_inView = false;
-most_popular_words_pureHeroine_inView = false;
-TFIDF_melodrama_inView = false;
-TFIDF_pureHeroine_inView = false;
-NRC_All_melodrama_inView = false;
-NRC_All_pureHeroine_inView = false;
-NRC_Pos_melodrama_inView = false;
-NRC_Neg_melodrama_inView = false;
-NRC_Pos_pureHeroine_inView = false;
-NRC_Neg_pureHeroine_inView = false;
+most_popular_words_hs_inView = false;
+most_popular_words_fl_inView = false;
+TFIDF_hs_inView = false;
+TFIDF_fl_inView = false;
+NRC_All_hs_inView = false;
+NRC_All_fl_inView = false;
+NRC_Pos_hs_inView = false;
+NRC_Neg_hs_inView = false;
+NRC_Pos_fl_inView = false;
+NRC_Neg_fl_inView = false;
 
 $.fn.isOnScreen = function(){
 
@@ -41,54 +41,54 @@ window.addEventListener("scroll", function(){
         showMostPopularWords();
     }
 
-    if ($('#chart-most-popular-words-melodrama').isOnScreen() && most_popular_words_melodrama_inView == false) {
-        most_popular_words_melodrama_inView = true;
-        showMostPopularWords_Melodrama();
+    if ($('#chart-most-popular-words-hs').isOnScreen() && most_popular_words_hs_inView == false) {
+        most_popular_words_hs_inView = true;
+        showMostPopularWords_hs();
     }
 
-    if ($('#chart-most-popular-words-pureHeroine').isOnScreen() && most_popular_words_pureHeroine_inView == false) {
-        most_popular_words_pureHeroine_inView = true;
-        showMostPopularWords_pureHeroine();
+    if ($('#chart-most-popular-words-fl').isOnScreen() && most_popular_words_fl_inView == false) {
+        most_popular_words_fl_inView = true;
+        showMostPopularWords_fl();
     }
 
-    if ($('#chart-TFIDF-melodrama').isOnScreen() && TFIDF_melodrama_inView == false) {
-        TFIDF_melodrama_inView = true;
-        showTFIDF_Melodrama();
+    if ($('#chart-TFIDF-hs').isOnScreen() && TFIDF_hs_inView == false) {
+        TFIDF_hs_inView = true;
+        showTFIDF_hs();
     }
 
-    if ($('#chart-TFIDF-pureHeroine').isOnScreen() && TFIDF_pureHeroine_inView == false) {
-        TFIDF_pureHeroine_inView = true;
-        showTFIDF_pureHeroine();
+    if ($('#chart-TFIDF-fl').isOnScreen() && TFIDF_fl_inView == false) {
+        TFIDF_fl_inView = true;
+        showTFIDF_fl();
     }
 
-    if ($('#chart-NRC-All-melodrama').isOnScreen() && NRC_All_melodrama_inView == false) {
-        NRC_All_melodrama_inView = true;
-        showNRC_All_Melodrama();
+    if ($('#chart-NRC-All-hs').isOnScreen() && NRC_All_hs_inView == false) {
+        NRC_All_hs_inView = true;
+        showNRC_All_hs();
     }
 
-    if ($('#chart-NRC-All-pureHeroine').isOnScreen() && NRC_All_pureHeroine_inView == false) {
-        NRC_All_pureHeroine_inView  = true;
-        showNRC_All_pureHeroine();
+    if ($('#chart-NRC-All-fl').isOnScreen() && NRC_All_fl_inView == false) {
+        NRC_All_fl_inView  = true;
+        showNRC_All_fl();
     }
 
-    if ($('#chart-NRC-Pos-melodrama').isOnScreen() && NRC_Pos_melodrama_inView == false) {
-        NRC_Pos_melodrama_inView = true;
-        showNRC_Pos_Melodrama();
+    if ($('#chart-NRC-Pos-hs').isOnScreen() && NRC_Pos_hs_inView == false) {
+        NRC_Pos_hs_inView = true;
+        showNRC_Pos_hs();
     }
 
-    if ($('#chart-NRC-Neg-melodrama').isOnScreen() && NRC_Neg_melodrama_inView == false) {
-        NRC_Neg_melodrama_inView  = true;
-        showNRC_Neg_Melodrama();
+    if ($('#chart-NRC-Neg-hs').isOnScreen() && NRC_Neg_hs_inView == false) {
+        NRC_Neg_hs_inView  = true;
+        showNRC_Neg_hs();
     }
 
-    if ($('#chart-NRC-Pos-pureHeroine').isOnScreen() && NRC_Pos_pureHeroine_inView == false) {
-        NRC_Pos_pureHeroine_inView = true;
-        showNRC_Pos_pureHeroine();
+    if ($('#chart-NRC-Pos-fl').isOnScreen() && NRC_Pos_fl_inView == false) {
+        NRC_Pos_fl_inView = true;
+        showNRC_Pos_fl();
     }
 
-    if ($('#chart-NRC-Neg-pureHeroine').isOnScreen() && NRC_Neg_pureHeroine_inView == false) {
-        NRC_Neg_pureHeroine_inView  = true;
-        showNRC_Neg_pureHeroine();
+    if ($('#chart-NRC-Neg-fl').isOnScreen() && NRC_Neg_fl_inView == false) {
+        NRC_Neg_fl_inView  = true;
+        showNRC_Neg_fl();
     }
 })
 
@@ -216,18 +216,18 @@ function showMostPopularWords(){
 
 //--------------------
 
-function showMostPopularWords_Melodrama(){
-    var ctx_most_popular_words_melodrama = document.getElementById("chart-most-popular-words-melodrama").getContext('2d');
-    var dataValues_most_popular_words_melodrama = [29, 25, 24, 23, 20, 20, 19, 19, 16, 15];
-    var dataLabels_most_popular_words_melodrama = ['know','none','angel','good','like','tell','gotta','something','away','your'];
-    var most_popular_words_Chart_melodrama = new Chart(ctx_most_popular_words_melodrama, {
+function showMostPopularWords_hs(){
+    var ctx_most_popular_words_hs = document.getElementById("chart-most-popular-words-hs").getContext('2d');
+    var dataValues_most_popular_words_hs = [29, 25, 24, 23, 20, 20, 19, 19, 16, 15];
+    var dataLabels_most_popular_words_hs = ['know','none','angel','good','like','tell','gotta','something','away','your'];
+    var most_popular_words_Chart_hs = new Chart(ctx_most_popular_words_hs, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_most_popular_words_melodrama,
+        labels: dataLabels_most_popular_words_hs,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_most_popular_words_melodrama,
+            data: dataValues_most_popular_words_hs,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -271,18 +271,18 @@ function showMostPopularWords_Melodrama(){
     });
 }
 
-function showMostPopularWords_pureHeroine(){
-    var ctx_most_popular_words_pureHeroine = document.getElementById("chart-most-popular-words-pureHeroine").getContext('2d');
-    var dataValues_most_popular_words_pureHeroine = [40, 40, 35, 30, 28, 28, 25, 24, 22, 20];
-    var dataLabels_most_popular_words_pureHeroine = ['know','golden','going','ever','like','sugar','watermelon','high','what','thing'];
-    var most_popular_words_Chart_pureHeroine = new Chart(ctx_most_popular_words_pureHeroine, {
+function showMostPopularWords_fl(){
+    var ctx_most_popular_words_fl = document.getElementById("chart-most-popular-words-fl").getContext('2d');
+    var dataValues_most_popular_words_fl = [40, 40, 35, 30, 28, 28, 25, 24, 22, 20];
+    var dataLabels_most_popular_words_fl = ['know','golden','going','ever','like','sugar','watermelon','high','what','thing'];
+    var most_popular_words_Chart_fl = new Chart(ctx_most_popular_words_fl, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_most_popular_words_pureHeroine,
+        labels: dataLabels_most_popular_words_fl,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_most_popular_words_pureHeroine,
+            data: dataValues_most_popular_words_fl,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -328,18 +328,18 @@ function showMostPopularWords_pureHeroine(){
 
 //-----------------
 
-function showTFIDF_Melodrama(){
-    var ctx_TFIDF_melodrama = document.getElementById("chart-TFIDF-melodrama").getContext('2d');
-    var dataValues_TFIDF_melodrama = [0.95,0.9,0.85,0.8,0.75,0.7,0.69,0.65,0.62,0.6];
-    var dataLabels_TFIDF_melodrama = ['woman','angel','good','gotta','know','none','tell','something','used','better'];
-    var TFIDF_Chart_melodrama = new Chart(ctx_TFIDF_melodrama, {
+function showTFIDF_hs(){
+    var ctx_TFIDF_hs = document.getElementById("chart-TFIDF-hs").getContext('2d');
+    var dataValues_TFIDF_hs = [0.95,0.9,0.85,0.8,0.75,0.7,0.69,0.65,0.62,0.6];
+    var dataLabels_TFIDF_hs = ['woman','angel','good','gotta','know','none','tell','something','used','better'];
+    var TFIDF_Chart_hs = new Chart(ctx_TFIDF_hs, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_TFIDF_melodrama,
+        labels: dataLabels_TFIDF_hs,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_TFIDF_melodrama,
+            data: dataValues_TFIDF_hs,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -383,18 +383,18 @@ function showTFIDF_Melodrama(){
     });
 }
 
-function showTFIDF_pureHeroine(){
-    var ctx_TFIDF_pureHeroine = document.getElementById("chart-TFIDF-pureHeroine").getContext('2d');
-    var dataValues_TFIDF_pureHeroine = [1.1,0.85,0.8,0.8,0.78,0.75,0.67,0.66,0.66,0.65];
-    var dataLabels_TFIDF_pureHeroine = ['going','golden','call','know','what','again','sunflower','ever','fine','line'];
-    var TFIDF_Chart_pureHeroine = new Chart(ctx_TFIDF_pureHeroine, {
+function showTFIDF_fl(){
+    var ctx_TFIDF_fl = document.getElementById("chart-TFIDF-fl").getContext('2d');
+    var dataValues_TFIDF_fl = [1.1,0.85,0.8,0.8,0.78,0.75,0.67,0.66,0.66,0.65];
+    var dataLabels_TFIDF_fl = ['going','golden','call','know','what','again','sunflower','ever','fine','line'];
+    var TFIDF_Chart_fl = new Chart(ctx_TFIDF_fl, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_TFIDF_pureHeroine,
+        labels: dataLabels_TFIDF_fl,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_TFIDF_pureHeroine,
+            data: dataValues_TFIDF_fl,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -440,18 +440,18 @@ function showTFIDF_pureHeroine(){
 
 //-----------------
 
-function showNRC_All_Melodrama(){
-    var ctx_NRC_All_melodrama = document.getElementById("chart-NRC-All-melodrama").getContext('2d');
-    var dataValues_NRC_All_melodrama = [18, 16, 16, 15, 14, 14, 10, 6];
-    var dataLabels_NRC_All_melodrama = ['joy', 'anticipation', 'sadness', 'trust', 'anger', 'fear', 'surprise','disgust'];
-    var NRC_All_Chart_melodrama = new Chart(ctx_NRC_All_melodrama, {
+function showNRC_All_hs(){
+    var ctx_NRC_All_hs = document.getElementById("chart-NRC-All-hs").getContext('2d');
+    var dataValues_NRC_All_hs = [18, 16, 16, 15, 14, 14, 10, 6];
+    var dataLabels_NRC_All_hs = ['joy', 'anticipation', 'sadness', 'trust', 'anger', 'fear', 'surprise','disgust'];
+    var NRC_All_Chart_hs = new Chart(ctx_NRC_All_hs, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_All_melodrama,
+        labels: dataLabels_NRC_All_hs,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_All_melodrama,
+            data: dataValues_NRC_All_hs,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -495,18 +495,18 @@ function showNRC_All_Melodrama(){
     });
 }
 
-function showNRC_All_pureHeroine(){
-    var ctx_NRC_All_pureHeroine = document.getElementById("chart-NRC-All-pureHeroine").getContext('2d');
-    var dataValues_NRC_All_pureHeroine = [20, 20, 17.5, 16, 15, 13, 11, 11];
-    var dataLabels_NRC_All_pureHeroine = ['anticipation', 'trust', 'joy', 'sadness', 'anger', 'disgust', 'fear','surprise'];
-    var NRC_All_Chart_pureHeroine = new Chart(ctx_NRC_All_pureHeroine, {
+function showNRC_All_fl(){
+    var ctx_NRC_All_fl = document.getElementById("chart-NRC-All-fl").getContext('2d');
+    var dataValues_NRC_All_fl = [20, 20, 17.5, 16, 15, 13, 11, 11];
+    var dataLabels_NRC_All_fl = ['anticipation', 'trust', 'joy', 'sadness', 'anger', 'disgust', 'fear','surprise'];
+    var NRC_All_Chart_fl = new Chart(ctx_NRC_All_fl, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_All_pureHeroine,
+        labels: dataLabels_NRC_All_fl,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_All_pureHeroine,
+            data: dataValues_NRC_All_fl,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -552,18 +552,18 @@ function showNRC_All_pureHeroine(){
 
 //--------------
 
-function showNRC_Pos_Melodrama(){
-    var ctx_NRC_Pos_melodrama = document.getElementById("chart-NRC-Pos-melodrama").getContext('2d');
-    var dataValues_NRC_Pos_melodrama = [30, 25, 16, 14, 7, 4, 4, 3, 2, 2];
-    var dataLabels_NRC_Pos_melodrama = ['angel','good','baby','sweet','learn','hope','pretty','talk','white','young'];
-    var NRC_Pos_Chart_melodrama = new Chart(ctx_NRC_Pos_melodrama, {
+function showNRC_Pos_hs(){
+    var ctx_NRC_Pos_hs = document.getElementById("chart-NRC-Pos-hs").getContext('2d');
+    var dataValues_NRC_Pos_hs = [30, 25, 16, 14, 7, 4, 4, 3, 2, 2];
+    var dataLabels_NRC_Pos_hs = ['angel','good','baby','sweet','learn','hope','pretty','talk','white','young'];
+    var NRC_Pos_Chart_hs = new Chart(ctx_NRC_Pos_hs, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_Pos_melodrama,
+        labels: dataLabels_NRC_Pos_hs,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_Pos_melodrama,
+            data: dataValues_NRC_Pos_hs,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -607,18 +607,18 @@ function showNRC_Pos_Melodrama(){
     });
 }
 
-function showNRC_Neg_Melodrama(){
-    var ctx_NRC_Neg_melodrama = document.getElementById("chart-NRC-Neg-melodrama").getContext('2d');
-    var dataValues_NRC_Neg_melodrama = [14, 8, 5, 5, 3, 3, 2, 2, 1, 1];
-    var dataLabels_NRC_Neg_melodrama = ['creature','crying','crazy','losing','argue','spoke','pretend','selfish','bribe','cheap'];
-    var NRC_Neg_Chart_melodrama = new Chart(ctx_NRC_Neg_melodrama, {
+function showNRC_Neg_hs(){
+    var ctx_NRC_Neg_hs = document.getElementById("chart-NRC-Neg-hs").getContext('2d');
+    var dataValues_NRC_Neg_hs = [14, 8, 5, 5, 3, 3, 2, 2, 1, 1];
+    var dataLabels_NRC_Neg_hs = ['creature','crying','crazy','losing','argue','spoke','pretend','selfish','bribe','cheap'];
+    var NRC_Neg_Chart_hs = new Chart(ctx_NRC_Neg_hs, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_Neg_melodrama,
+        labels: dataLabels_NRC_Neg_hs,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_Neg_melodrama,
+            data: dataValues_NRC_Neg_hs,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -662,18 +662,18 @@ function showNRC_Neg_Melodrama(){
     });
 }
 
-function showNRC_Pos_pureHeroine(){
-    var ctx_NRC_Pos_pureHeroine = document.getElementById("chart-NRC-Pos-pureHeroine").getContext('2d');
-    var dataValues_NRC_Pos_pureHeroine = [28, 13, 12, 9, 9, 7, 6, 5, 5, 4];
-    var dataLabels_NRC_Pos_pureHeroine = ['sugar','good','baby','adore','shine','honey','kindness','talk','treat','feeling'];
-    var NRC_Pos_Chart_pureHeroine = new Chart(ctx_NRC_Pos_pureHeroine, {
+function showNRC_Pos_fl(){
+    var ctx_NRC_Pos_fl = document.getElementById("chart-NRC-Pos-fl").getContext('2d');
+    var dataValues_NRC_Pos_fl = [28, 13, 12, 9, 9, 7, 6, 5, 5, 4];
+    var dataLabels_NRC_Pos_fl = ['sugar','good','baby','adore','shine','honey','kindness','talk','treat','feeling'];
+    var NRC_Pos_Chart_fl = new Chart(ctx_NRC_Pos_fl, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_Pos_pureHeroine,
+        labels: dataLabels_NRC_Pos_fl,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_Pos_pureHeroine,
+            data: dataValues_NRC_Pos_fl,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },
@@ -717,18 +717,18 @@ function showNRC_Pos_pureHeroine(){
     });
 }
 
-function showNRC_Neg_pureHeroine(){
-    var ctx_NRC_Neg_pureHeroine = document.getElementById("chart-NRC-Neg-pureHeroine").getContext('2d');
-    var dataValues_NRC_Neg_pureHeroine = [20, 13, 11, 6, 6, 4, 4, 4, 2, 2];
-    var dataLabels_NRC_Neg_pureHeroine = ['harry','falling','lonely','broken','treat','blame','feeling','pretend','arrogant','bitch'];
-    var NRC_Neg_Chart_pureHeroine = new Chart(ctx_NRC_Neg_pureHeroine, {
+function showNRC_Neg_fl(){
+    var ctx_NRC_Neg_fl = document.getElementById("chart-NRC-Neg-fl").getContext('2d');
+    var dataValues_NRC_Neg_fl = [20, 13, 11, 6, 6, 4, 4, 4, 2, 2];
+    var dataLabels_NRC_Neg_fl = ['harry','falling','lonely','broken','treat','blame','feeling','pretend','arrogant','bitch'];
+    var NRC_Neg_Chart_fl = new Chart(ctx_NRC_Neg_fl, {
     type: 'horizontalBar',
     maintainAspectRatio: false,
         data: {
-        labels: dataLabels_NRC_Neg_pureHeroine,
+        labels: dataLabels_NRC_Neg_fl,
         datasets: [{
             label: 'Contagem',
-            data: dataValues_NRC_Neg_pureHeroine,
+            data: dataValues_NRC_Neg_fl,
             backgroundColor: 'rgba(255, 255, 255, 1)',
         }]
         },

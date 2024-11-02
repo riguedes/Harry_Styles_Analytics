@@ -157,14 +157,14 @@ body{
     width: 90%;
     padding-left: 5%;
 }
-.chart-most-popular-words-melodrama-container,
-.chart-most-popular-words-pureHeroine-container{
+.chart-most-popular-words-hs-container,
+.chart-most-popular-words-fl-container{
     float: left;
     padding-top: 100px;
     width: 45%;
 }
 
-.chart-most-popular-words-pureHeroine-container{
+.chart-most-popular-words-fl-container{
    padding-left: 5%;
 }
 
@@ -219,14 +219,14 @@ body{
     width: 90%;
     padding-left: 5%;
 }
-.chart-TFIDF-melodrama-container,
-.chart-TFIDF-pureHeroine-container{
+.chart-TFIDF-hs-container,
+.chart-TFIDF-fl-container{
     float: left;
     padding-top: 100px;
     width: 45%;
 }
 
-.chart-TFIDF-pureHeroine-container{
+.chart-TFIDF-fl-container{
    padding-left: 5%;
 }
 
@@ -271,14 +271,14 @@ body{
     width: 90%;
     padding-left: 5%;
 }
-.chart-NRC-All-melodrama-container,
-.chart-NRC-All-pureHeroine-container{
+.chart-NRC-All-hs-container,
+.chart-NRC-All-fl-container{
     float: left;
     padding-top: 100px;
     width: 45%;
 }
 
-.chart-NRC-All-pureHeroine-container{
+.chart-NRC-All-fl-container{
    padding-left: 5%;
 }
 
@@ -312,35 +312,35 @@ body{
     font-size: 30px;
 }
 
-.chart-NRC-PosNeg-melodrama-container{
+.chart-NRC-PosNeg-hs-container{
     display: inline-block;
     width: 90%;
     padding-left: 5%;
 }
-.chart-NRC-Pos-melodrama-container,
-.chart-NRC-Neg-melodrama-container{
+.chart-NRC-Pos-hs-container,
+.chart-NRC-Neg-hs-container{
     float: left;
     padding-top: 100px;
     width: 45%;
 }
 
-.chart-NRC-Neg-melodrama-container{
+.chart-NRC-Neg-hs-container{
     padding-left: 5%;
 }
 
-.chart-NRC-PosNeg-pureHeroine-container{
+.chart-NRC-PosNeg-fl-container{
     display: inline-block;
     width: 90%;
     padding-left: 5%;
 }
-.chart-NRC-Pos-pureHeroine-container,
-.chart-NRC-Neg-pureHeroine-container{
+.chart-NRC-Pos-fl-container,
+.chart-NRC-Neg-fl-container{
     float: left;
     padding-top: 100px;
     width: 45%;
 }
 
-.chart-NRC-Neg-pureHeroine-container{
+.chart-NRC-Neg-fl-container{
     padding-left: 5%;
 }
 
@@ -449,8 +449,8 @@ body{
       width: 100%;
       padding-left: 0px;
   }
-  .chart-most-popular-words-melodrama-container,
-  .chart-most-popular-words-pureHeroine-container{
+  .chart-most-popular-words-hs-container,
+  .chart-most-popular-words-fl-container{
       width: 90%;
       padding-left: 5%;
       padding-top: 20px;
@@ -475,8 +475,8 @@ body{
     padding-left: 0px;
     }
 
-    .chart-TFIDF-melodrama-container,
-    .chart-TFIDF-pureHeroine-container{
+    .chart-TFIDF-hs-container,
+    .chart-TFIDF-fl-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;
@@ -494,8 +494,8 @@ body{
     padding-left: 0px;
     }
 
-    .chart-NRC-All-melodrama-container,
-    .chart-NRC-All-pureHeroine-container{
+    .chart-NRC-All-hs-container,
+    .chart-NRC-All-fl-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;
@@ -508,16 +508,16 @@ body{
     padding-left: 5%;
   }
 
-  .chart-NRC-PosNeg-melodrama-container,
-  .chart-NRC-PosNeg-pureHeroine-container{
+  .chart-NRC-PosNeg-hs-container,
+  .chart-NRC-PosNeg-fl-container{
     width: 100%;
     padding-left: 0px;
     }
 
-    .chart-NRC-Pos-melodrama-container,
-    .chart-NRC-Pos-pureHeroine-container,
-    .chart-NRC-Neg-melodrama-container,
-    .chart-NRC-Neg-pureHeroine-container{
+    .chart-NRC-Pos-hs-container,
+    .chart-NRC-Pos-fl-container,
+    .chart-NRC-Neg-hs-container,
+    .chart-NRC-Neg-fl-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;
