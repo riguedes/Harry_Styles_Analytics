@@ -158,7 +158,8 @@ body{
     padding-left: 5%;
 }
 .chart-most-popular-words-hs-container,
-.chart-most-popular-words-fl-container{
+.chart-most-popular-words-fl-container,
+.chart-most-popular-words-hh-container{
     float: left;
     padding-top: 100px;
     width: 45%;
@@ -167,6 +168,10 @@ body{
 .chart-most-popular-words-fl-container{
    padding-left: 5%;
 }
+
+.chart-most-popular-words-hh-container{
+    padding-left: 5%;
+ }
 
 .palavras-mais-populares-individual p.explanation{
     margin-top: 40px;
@@ -220,7 +225,8 @@ body{
     padding-left: 5%;
 }
 .chart-TFIDF-hs-container,
-.chart-TFIDF-fl-container{
+.chart-TFIDF-fl-container,
+.chart-TFIDF-hh-container{
     float: left;
     padding-top: 100px;
     width: 45%;
@@ -229,6 +235,10 @@ body{
 .chart-TFIDF-fl-container{
    padding-left: 5%;
 }
+
+.chart-TFIDF-hh-container{
+    padding-left: 5%;
+ }
 
 .NRC-All{
     background: #DBBABA; 
@@ -272,7 +282,8 @@ body{
     padding-left: 5%;
 }
 .chart-NRC-All-hs-container,
-.chart-NRC-All-fl-container{
+.chart-NRC-All-fl-container,
+.chart-NRC-All-hh-container{
     float: left;
     padding-top: 100px;
     width: 45%;
@@ -281,6 +292,10 @@ body{
 .chart-NRC-All-fl-container{
    padding-left: 5%;
 }
+
+.chart-NRC-All-hh-container{
+    padding-left: 5%;
+ }
 
 .NRC-PosNeg{
     background: #DAA982;
@@ -341,6 +356,22 @@ body{
 }
 
 .chart-NRC-Neg-fl-container{
+    padding-left: 5%;
+}
+
+.chart-NRC-PosNeg-hh-container{
+    display: inline-block;
+    width: 90%;
+    padding-left: 5%;
+}
+.chart-NRC-Pos-hh-container,
+.chart-NRC-Neg-hh-container{
+    float: left;
+    padding-top: 100px;
+    width: 45%;
+}
+
+.chart-NRC-Neg-hh-container{
     padding-left: 5%;
 }
 
@@ -450,7 +481,8 @@ body{
       padding-left: 0px;
   }
   .chart-most-popular-words-hs-container,
-  .chart-most-popular-words-fl-container{
+  .chart-most-popular-words-fl-container,
+  .chart-most-popular-words-hh-container{
       width: 90%;
       padding-left: 5%;
       padding-top: 20px;
@@ -476,7 +508,8 @@ body{
     }
 
     .chart-TFIDF-hs-container,
-    .chart-TFIDF-fl-container{
+    .chart-TFIDF-fl-container,
+    .chart-TFIDF-hh-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;
@@ -495,7 +528,8 @@ body{
     }
 
     .chart-NRC-All-hs-container,
-    .chart-NRC-All-fl-container{
+    .chart-NRC-All-fl-container,
+    .chart-NRC-All-hh-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;
@@ -509,15 +543,18 @@ body{
   }
 
   .chart-NRC-PosNeg-hs-container,
-  .chart-NRC-PosNeg-fl-container{
+  .chart-NRC-PosNeg-fl-container,
+  .chart-NRC-PosNeg-hh-container{
     width: 100%;
     padding-left: 0px;
     }
 
     .chart-NRC-Pos-hs-container,
     .chart-NRC-Pos-fl-container,
+    .chart-NRC-Pos-hh-container,
     .chart-NRC-Neg-hs-container,
-    .chart-NRC-Neg-fl-container{
+    .chart-NRC-Neg-fl-container,
+    .chart-NRC-Neg-hh-container{
         width: 90%;
         padding-left: 5%;
         padding-top: 20px;

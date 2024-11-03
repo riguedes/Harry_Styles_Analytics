@@ -2,14 +2,19 @@ most_popular_words_inView = false;
 word_count_inView = false;
 most_popular_words_hs_inView = false;
 most_popular_words_fl_inView = false;
+most_popular_words_hh_inView = false;
 TFIDF_hs_inView = false;
 TFIDF_fl_inView = false;
+TFIDF_hh_inView = false;
 NRC_All_hs_inView = false;
 NRC_All_fl_inView = false;
+NRC_All_hh_inView = false;
 NRC_Pos_hs_inView = false;
 NRC_Neg_hs_inView = false;
 NRC_Pos_fl_inView = false;
 NRC_Neg_fl_inView = false;
+NRC_Pos_hh_inView = false;
+NRC_Neg_hh_inView = false;
 
 $.fn.isOnScreen = function(){
 
@@ -51,6 +56,11 @@ window.addEventListener("scroll", function(){
         showMostPopularWords_fl();
     }
 
+    if ($('#chart-most-popular-words-hh').isOnScreen() && most_popular_words_hh_inView == false) {
+        most_popular_words_hh_inView = true;
+        showMostPopularWords_hh();
+    }
+
     if ($('#chart-TFIDF-hs').isOnScreen() && TFIDF_hs_inView == false) {
         TFIDF_hs_inView = true;
         showTFIDF_hs();
@@ -61,6 +71,11 @@ window.addEventListener("scroll", function(){
         showTFIDF_fl();
     }
 
+    if ($('#chart-TFIDF-hh').isOnScreen() && TFIDF_hh_inView == false) {
+        TFIDF_hh_inView = true;
+        showTFIDF_hh();
+    }
+
     if ($('#chart-NRC-All-hs').isOnScreen() && NRC_All_hs_inView == false) {
         NRC_All_hs_inView = true;
         showNRC_All_hs();
@@ -69,6 +84,11 @@ window.addEventListener("scroll", function(){
     if ($('#chart-NRC-All-fl').isOnScreen() && NRC_All_fl_inView == false) {
         NRC_All_fl_inView  = true;
         showNRC_All_fl();
+    }
+
+    if ($('#chart-NRC-All-hh').isOnScreen() && NRC_All_hh_inView == false) {
+        NRC_All_hh_inView  = true;
+        showNRC_All_hh();
     }
 
     if ($('#chart-NRC-Pos-hs').isOnScreen() && NRC_Pos_hs_inView == false) {
@@ -89,6 +109,16 @@ window.addEventListener("scroll", function(){
     if ($('#chart-NRC-Neg-fl').isOnScreen() && NRC_Neg_fl_inView == false) {
         NRC_Neg_fl_inView  = true;
         showNRC_Neg_fl();
+    }
+
+    if ($('#chart-NRC-Pos-hh').isOnScreen() && NRC_Pos_hh_inView == false) {
+        NRC_Pos_hh_inView = true;
+        showNRC_Pos_hh();
+    }
+
+    if ($('#chart-NRC-Neg-hh').isOnScreen() && NRC_Neg_hh_inView == false) {
+        NRC_Neg_hh_inView  = true;
+        showNRC_Neg_hh();
     }
 })
 
@@ -326,6 +356,61 @@ function showMostPopularWords_fl(){
     });
 }
 
+function showMostPopularWords_hh(){
+    var ctx_most_popular_words_hh = document.getElementById("chart-most-popular-words-hh").getContext('2d');
+    var dataValues_most_popular_words_hh = [40, 31, 30, 20, 19, 15, 14, 12, 12, 12];
+    var dataLabels_most_popular_words_hh = ['know','love','cinema','like','give','there','daylight','might','also','baby'];
+    var most_popular_words_Chart_hh = new Chart(ctx_most_popular_words_hh, {
+    type: 'horizontalBar',
+    maintainAspectRatio: false,
+        data: {
+        labels: dataLabels_most_popular_words_hh,
+        datasets: [{
+            label: 'Contagem',
+            data: dataValues_most_popular_words_hh,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+        }]
+        },
+        options: {
+          aspectRatio: 1,
+            title: {
+                display: true,
+                text: "Palavras mais Usadas em Harry's House",
+                fontColor: 'white'
+            },
+            legend: {
+                labels: {
+                fontColor: 'white'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: 'white',
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Ocorrências',
+                        fontColor: 'white'
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Palavras',
+                        fontColor: 'white'
+                    },
+                    ticks: {
+                        fontColor: 'white'
+                    }
+                }]
+            }
+        }
+    });
+}
+
 //-----------------
 
 function showTFIDF_hs(){
@@ -438,6 +523,61 @@ function showTFIDF_fl(){
     });
 }
 
+function showTFIDF_hh(){
+    var ctx_TFIDF_hh = document.getElementById("chart-TFIDF-hh").getContext('2d');
+    var dataValues_TFIDF_hh = [1.5,1,0.85,0.8,0.8,0.65,0.6,0.6,0.55,0.55];
+    var dataLabels_TFIDF_hh = ['know','love','cinema','daylight','thinking','give','there','mind','baby','wanna'];
+    var TFIDF_Chart_hh = new Chart(ctx_TFIDF_hh, {
+    type: 'horizontalBar',
+    maintainAspectRatio: false,
+        data: {
+        labels: dataLabels_TFIDF_hh,
+        datasets: [{
+            label: 'Contagem',
+            data: dataValues_TFIDF_hh,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+        }]
+        },
+        options: {
+          aspectRatio: 1,
+            title: {
+                display: true,
+                text: "Importância Lírica em Harry's House",
+                fontColor: 'white'
+            },
+            legend: {
+                labels: {
+                fontColor: 'white'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: 'white',
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'TF-IDF Score',
+                        fontColor: 'white'
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Palavra',
+                        fontColor: 'white'
+                    },
+                    ticks: {
+                        fontColor: 'white'
+                    }
+                }]
+            }
+        }
+    });
+}
+
 //-----------------
 
 function showNRC_All_hs(){
@@ -515,6 +655,61 @@ function showNRC_All_fl(){
             title: {
                 display: true,
                 text: "Principais Sentimentos em Fine Line",
+                fontColor: 'white'
+            },
+            legend: {
+                labels: {
+                fontColor: 'white'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: 'white',
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Palavras',
+                        fontColor: 'white'
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Sentimentos',
+                        fontColor: 'white'
+                    },
+                    ticks: {
+                        fontColor: 'white'
+                    }
+                }]
+            }
+        }
+    });
+}
+
+function showNRC_All_hh(){
+    var ctx_NRC_All_hh = document.getElementById("chart-NRC-All-hh").getContext('2d');
+    var dataValues_NRC_All_hh = [28, 25, 22, 22, 17, 17, 15, 8];
+    var dataLabels_NRC_All_hh = ['joy', 'anticipation', 'sadness', 'trust', 'fear', 'surprise', 'anger','disgust'];
+    var NRC_All_Chart_hh = new Chart(ctx_NRC_All_hh, {
+    type: 'horizontalBar',
+    maintainAspectRatio: false,
+        data: {
+        labels: dataLabels_NRC_All_hh,
+        datasets: [{
+            label: 'Contagem',
+            data: dataValues_NRC_All_hh,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+        }]
+        },
+        options: {
+          aspectRatio: 1,
+            title: {
+                display: true,
+                text: "Principais Sentimentos em Harry's House",
                 fontColor: 'white'
             },
             legend: {
@@ -737,6 +932,116 @@ function showNRC_Neg_fl(){
             title: {
                 display: true,
                 text: "Contribuições de Palavras para os Sentimentos Negativos em Fine Line",
+                fontColor: 'white'
+            },
+            legend: {
+                labels: {
+                fontColor: 'white'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: 'white',
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Contagem',
+                        fontColor: 'white'
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Palavra',
+                        fontColor: 'white'
+                    },
+                    ticks: {
+                        fontColor: 'white'
+                    }
+                }]
+            }
+        }
+    });
+}
+
+function showNRC_Pos_hh(){
+    var ctx_NRC_Pos_hh = document.getElementById("chart-NRC-Pos-hh").getContext('2d');
+    var dataValues_NRC_Pos_hh = [30, 13, 10, 7, 6, 5, 5, 4, 3, 3];
+    var dataLabels_NRC_Pos_hh = ['love','baby','cool','pull','talk','full','intimate','music','kind','green'];
+    var NRC_Pos_Chart_hh = new Chart(ctx_NRC_Pos_hh, {
+    type: 'horizontalBar',
+    maintainAspectRatio: false,
+        data: {
+        labels: dataLabels_NRC_Pos_hh,
+        datasets: [{
+            label: 'Contagem',
+            data: dataValues_NRC_Pos_hh,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+        }]
+        },
+        options: {
+          aspectRatio: 1,
+            title: {
+                display: true,
+                text: "Contribuições de Palavras para os Sentimentos Positivos em Harry's House",
+                fontColor: 'white'
+            },
+            legend: {
+                labels: {
+                fontColor: 'white'
+                }
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        fontColor: 'white',
+                        beginAtZero: true
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Contagem',
+                        fontColor: 'white'
+                    },
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Palavra',
+                        fontColor: 'white'
+                    },
+                    ticks: {
+                        fontColor: 'white'
+                    }
+                }]
+            }
+        }
+    });
+}
+
+function showNRC_Neg_hh(){
+    var ctx_NRC_Neg_hh = document.getElementById("chart-NRC-Neg-hh").getContext('2d');
+    var dataValues_NRC_Neg_hh = [8, 7, 5, 4, 4, 4, 3, 2, 2, 2];
+    var dataLabels_NRC_Neg_hh = ['late','lonely','lost','leave','bout','cursing','worried','harry','haze','feeling'];
+    var NRC_Neg_Chart_hh = new Chart(ctx_NRC_Neg_hh, {
+    type: 'horizontalBar',
+    maintainAspectRatio: false,
+        data: {
+        labels: dataLabels_NRC_Neg_hh,
+        datasets: [{
+            label: 'Contagem',
+            data: dataValues_NRC_Neg_hh,
+            backgroundColor: 'rgba(255, 255, 255, 1)',
+        }]
+        },
+        options: {
+          aspectRatio: 1,
+            title: {
+                display: true,
+                text: "Contribuições de Palavras para os Sentimentos Negativos em Harry's House",
                 fontColor: 'white'
             },
             legend: {
